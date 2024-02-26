@@ -4,6 +4,10 @@
 
 What is EC2, and why is it important?
 
+Amazon EC2 (Elastic Compute Cloud) is a scalable cloud computing service by AWS, 
+providing virtual servers (instances) with customizable computing capacity, 
+various instance types, and on-demand scalability. 
+Users can deploy applications, manage storage, and configure networking, paying for actual usage.
 ```
 - Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides secure, resizable compute capacity in the cloud.
 - Access reliable, scalable infrastructure on demand. Scale capacity within minutes with SLA commitment of 99.99% availability.
