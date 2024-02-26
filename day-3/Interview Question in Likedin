@@ -1,0 +1,218 @@
+Question 1: What is EC2?
+
+Amazon EC2 (Elastic Compute Cloud) is a scalable cloud computing service by AWS, 
+providing virtual servers (instances) with customizable computing capacity, 
+various instance types, and on-demand scalability. 
+Users can deploy applications, manage storage, and configure networking, paying for actual usage.
+
+Question 2: What is SnowBall?
+
+AWS Snowball is a physical data transfer device designed for large-scale data migration to and from the AWS cloud. 
+It's a secure and durable appliance with built-in encryption and a storage capacity ranging from tens of terabytes to exabytes. 
+Snowball accelerates data transfer by physically shipping the device, minimizing the time and bandwidth required for massive data transfers.
+
+Question 3: What is CloudWatch?
+Amazon CloudWatch is a comprehensive monitoring and observability service in AWS. 
+It allows users to collect and track metrics, collect and monitor log files, and set alarms. 
+CloudWatch provides insights into resource utilization, operational performance, and application behavior, 
+facilitating efficient management and optimization of AWS resources.
+
+Question 4: What is Elastic Transcoder?
+
+AWS Elastic Transcoder is a scalable media transcoding service.
+It converts multimedia files from one format to another, allowing users to prepare content for various devices and resolutions. 
+Elastic Transcoder supports a variety of input and output formats, provides customizable presets, and seamlessly integrates with other AWS services.
+
+Question 5: What do you understand by VPC?
+
+Amazon Virtual Private Cloud (VPC) is a logically isolated section of the AWS Cloud where users can launch AWS resources.
+It enables users to define their own network environment, including IP addresses, subnets, routing tables, and network gateways. 
+VPC provides control over the virtual networking environment, allowing users to customize and configure network settings based on their specific requirements.
+
+Question 6: DNS and Load Balancer Services come under which type of Cloud Service?
+
+DNS (Domain Name System) and Load Balancer services come under the category of "Networking and Content Delivery" in cloud services. 
+They are fundamental components within this category, providing domain resolution and distributing incoming traffic across multiple servers for improved availability and performance.
+
+Question 7: What are the Storage Classes available in AmazonS3?
+
+Amazon S3 offers several storage classes, each designed for different use cases:
+Standard: General-purpose storage with low latency and high throughput.
+Intelligent-Tiering: Automatically moves objects between two access tiers based on changing access patterns.
+One Zone-Infrequent Access (One Zone-IA): Data stored in a single availability zone at a lower cost, but with no multi-AZ resilience.
+Glacier: Low-cost storage for data archiving with longer retrieval times.
+Glacier Deep Archive: Lowest-cost storage for long-term data archiving with the longest retrieval times.
+Reduced Redundancy Storage (RRS): Deprecated storage class with lower durability and cost.
+
+Question 8: Explain what T2 instances are?
+
+T2 instances in AWS are burstable performance instances designed for applications with variable CPU usage. 
+They accumulate CPU credits during low-usage periods and use those credits for burstable performance when higher CPU levels are required. 
+T2 instances are well-suited for workloads that experience occasional spikes in demand, providing a balance between performance and cost-effectiveness.
+
+Question 9: What are Key-Pairs in AWS?
+
+In AWS, key pairs are cryptographic key pairs used for secure access to instances. 
+They consist of a public key, which is placed on the instance, and a private key, which is securely stored by the user. 
+Key pairs facilitate secure SSH (Secure Shell) access to Linux instances or RDP (Remote Desktop Protocol) access to Windows instances, enhancing the security of communication with AWS instances.
+
+Question 10: How many Subnets can you have per VPC?
+
+In AWS, you can have up to 200 subnets per Virtual Private Cloud (VPC). This limit applies across both the default and non-default VPCs within an AWS account. 
+Subnets allow you to partition IP space and configure network settings for your resources within a VPC.
+
+Question 11: List different types of Cloud Services.
+
+Cloud services can be broadly categorized into the following types:
+Infrastructure as a Service (IaaS): Provides virtualized computing resources over the internet, such as virtual machines, storage, and networks.
+Platform as a Service (PaaS): Offers a platform allowing customers to develop, run, and manage applications without dealing with the complexities of infrastructure.
+Software as a Service (SaaS): Delivers software applications over the internet, eliminating the need for users to install, maintain, and run the applications locally.
+Function as a Service (FaaS): Enables serverless computing, allowing developers to execute individual functions in response to events without managing servers.
+Database as a Service (DBaaS): Provides managed database services, handling database administration tasks, and allowing users to focus on application development.
+Security as a Service (SecaaS): Offers security services, such as identity management, threat detection, and encryption, delivered over the cloud.
+Container as a Service (CaaS): Manages the deployment and scaling of containerized applications, providing a platform for container orchestration.
+Backend as a Service (BaaS): Supplies pre-built backend services, such as databases and storage, to support mobile and web application development.
+These services collectively form the foundation of cloud computing, offering diverse solutions to meet different business and application needs.
+
+Question 12: Explain what S3 is?
+
+Amazon Simple Storage Service (S3) is a highly scalable and durable object storage service provided by Amazon Web Services (AWS). 
+It allows users to store and retrieve any amount of data from anywhere on the web. 
+S3 uses a key-based system to organize data, and each object (file) is stored in a bucket (container).
+S3 provides low-latency access to stored objects, and its architecture ensures high availability and fault tolerance. 
+Additionally, S3 offers features such as versioning, access control, and data lifecycle management, making it a
+versatile and reliable solution for various storage needs in the cloud.
+
+Question 13: How does Amazon Route53 provide high availability and low latency?
+
+Amazon Route 53, AWS's scalable and highly available Domain Name System (DNS) web service, achieves high availability and low latency through several technical mechanisms:
+Global Anycast Network: Route 53 uses a global network of authoritative DNS servers distributed across multiple geographic locations. This Anycast routing allows the system to direct DNS queries to the nearest available DNS server, minimizing latency.
+Health Checks and DNS Failover: Route 53 can perform health checks on resources, such as web servers, and automatically route traffic away from unhealthy or unavailable resources to healthy ones. This DNS failover capability contributes to high availability by
+redirecting traffic to operational endpoints.
+Traffic Flow: Route 53 Traffic Flow enables the creation of routing policies based on various criteria, such as latency, geography, or health checks. This allows for intelligent traffic steering to distribute requests efficiently and reduce latency.
+Latency-Based Routing: Route 53 provides latency-based routing, allowing DNS responses to be based on the lowest network latency between the end user and the AWS resources. This ensures that users are directed to the AWS endpoint with the fastest response time.
+Multi-Region Support: By supporting multiple AWS regions, Route 53 allows the distribution of resources globally. This ensures redundancy and fault tolerance, contributing to high availability.
+DNSSEC (DNS Security Extensions): Route 53 supports DNSSEC to enhance the security of the DNS infrastructure by providing data integrity and authentication. While not directly related to latency, DNSSEC is a critical aspect of DNS reliability and trust.
+In summary, Amazon Route 53 achieves high availability and low latency through a combination of a global Anycast network, health checks, DNS failover, traffic flow policies, latency-based routing, multi-region support, and DNSSEC.
+Question 14: How can you send a request to AmazonS3?
+To send a request to Amazon S3, you typically use the Amazon S3 API, which is accessible over HTTP or HTTPS. Here's a general overview of the process using HTTP methods:
+Authentication: Amazon S3 requires you to authenticate your requests. You can use AWS Signature Version 4 to sign your requests. The signature is included in the request headers.
+Endpoint URL: The endpoint URL for Amazon S3 depends on the region and follows the format: https://<bucket-name>.s3.<region>.amazonaws.com.
+HTTP Methods: Amazon S3 supports several HTTP methods, but the most common are:
+GET: Retrieve an object from S3.
+PUT: Upload a new object to S3 or update an existing one.
+DELETE: Remove an object from S3.
+POST: Used for specific operations, such as initiating a multipart upload.
+Bucket and Object Names:
+In the URL, replace <bucket-name> with the name of your S3 bucket and append the object key to the URL to specify the object you're working with.
+Headers: Include necessary headers in your request. Common headers include Content-Type to specify the type of data being sent and Authorization for authentication.
+Query Parameters: Some operations may require additional parameters specified in the query string, such as authentication tokens or query parameters for conditional operations.
+Here's a simplified example using a hypothetical URL:
+PUT /my-object HTTP/1.1
+Host: my-bucket.s3.us-west-2.amazonaws.com
+Date: Tue, 27 Nov 2023 21:39:45 GMT
+Authorization: AWS4-HMAC-SHA256 Credential=AKIAIOSFODNN7EXAMPLE/20231127/us-west-2/s3/aws4_request, SignedHeaders=host;date;content-type;x-amz-content-sha256,
+Signature=4d7f567c43e821fb8772ae9d79b6ad001c9ad76845cb1a3a4a9cf0dd9e9f7d88
+Content-Type: text/plain
+Content-Length: 26
+This is the content of my object.
+This example is a simplified PUT request to upload an object to an S3 bucket. It includes the necessary headers, authentication, and the content of the object in the request body. Actual requests will vary based on the specific operation and requirements. Always refer to the
+Amazon S3 API documentation for the most accurate and up-to-date information.
+Question 15: What does AMI include?
+An Amazon Machine Image (AMI) in the context of Amazon Web Services (AWS) is a pre-configured virtual machine image, which is used to create Amazon Elastic Compute Cloud (EC2) instances. An AMI includes the following components:
+Root Volume: The root volume is the primary storage device from which the EC2 instance boots. It contains the operating system, application server, and any other software configured on the instance.
+Operating System: The operating system installed on the root volume is a fundamental part of the AMI. This could be a variety of operating systems, such as Amazon Linux, Ubuntu, Windows Server, etc.
+Application Server: Depending on the AMI, it might include additional software or middleware components, such as a web server (e.g., Apache, Nginx), a database server (e.g., MySQL, PostgreSQL), or other application-specific components.
+Instance Store Volumes (if applicable): Some AMIs may include additional instance store volumes. These are temporary block-level storage volumes that are physically attached to the host computer of an EC2 instance. They provide temporary storage that persists only for the life of the instance.
+Launch Permissions: AMIs come with launch permissions that determine which AWS accounts are allowed to use the AMI to launch instances. These permissions are specified by the AMI owner.
+Block Device Mapping: Block device mapping defines the storage devices and their association with the instance. This includes information about the root volume and any additional volumes that may be attached to the instance.
+Metadata: AMIs can include metadata, such as information about the AMI itself, its owner, permissions, and other descriptive details.
+When you launch an EC2 instance from an AMI, you essentially instantiate a copy of the virtual machine defined by that AMI. This allows you to quickly deploy instances with predefined configurations, which is useful for ensuring consistency and repeatability in your infrastructure. It's important to note that you can also create your own custom AMIs, allowing you to capture and reuse your own configurations and setups.
+Question 16: What are the different types of Instances?
+Amazon EC2 (Elastic Compute Cloud) provides a variety of instance types, each designed for different use cases with varying combinations of compute, memory, storage, and networking capacity. As of my last knowledge update in January 2022, here are some of the main instance types available:
+General Purpose Instances (T3, T4g, T3a, T2):
+Balanced compute, memory, and networking resources.
+Suitable for diverse workloads.
+Compute Optimized Instances (C7g, C6g, C5a, C5, C4):
+High-performance processors.
+Ideal for compute-bound applications.
+Memory Optimized Instances (R7, R6g, R5a, R5, U4, X1e, X1, U-6tb1.metal, R- 6tb1.metal, X1e-32xlarge, U-9tb1.metal, R-9tb1.metal, U-12tb1.metal, R-12tb1.metal, X1e-8xlarge, X1e-16xlarge, U-6tb1.metal, R-6tb1.metal):
+High memory-to-CPU ratio.
+Ideal for memory-intensive applications.
+Accelerated Computing Instances (P4, P3, P2, Inf1, F1, C6gn, G4ad, G4dn, F1, P4d):
+Use hardware accelerators or co-processors.
+Suitable for graphics processing (GPU), machine learning, and other specialized workloads.
+Storage Optimized Instances (I3, I3en, D2, H1, L4dn, I3dn, z1d, i3.metal, i3en.metal):
+High, low-latency storage capacity.
+Ideal for data-intensive workloads.
+Bare Metal Instances (i3.metal, i3en.metal, m5.metal, m5zn.metal, r5.metal, r5zn.metal, c5.metal, u-6tb1.metal, r-6tb1.metal, u-9tb1.metal, r-9tb1.metal, u-12tb1.metal, r-12tb1.metal, x1e.metal, z1d.metal):
+Direct access to the physical server's hardware.
+Useful for applications that require access to the underlying hardware.
+Each instance type is identified by a specific naming convention, such as "t2.micro" or "m5.large, " where the letter indicates the instance class (e.g., "t" for general purpose, "m" for standard instances), and the number represents the generation. The instance types are continually evolving, with AWS introducing new instance types based on advancements in hardware and changes in customer requirements.
+Question 17: What is the relation between the AvailabilityZone and Region?
+In Amazon Web Services (AWS), a Region is a geographical area where AWS data centers are located. Each AWS Region is made up of multiple Availability Zones. An Availability Zone (AZ) is essentially a data center or a cluster of data centers within a Region that are designed to be isolated from each other in terms of power, cooling, and network infrastructure. Key points about the relationship between Availability Zones and Regions:
+Region:
+A Region is a physical location in the world where AWS has multiple data centers.
+AWS Regions are entirely independent of each other, meaning they are isolated and separate entities.
+Examples of AWS Regions include "us-east-1" (N. Virginia), "eu-west-1" (Ireland), and "ap-southeast-2" (Sydney).
+Availability Zone:
+An Availability Zone is a data center or a group of data centers within a Region.
+Availability Zones are designed to be fault-isolated, meaning that a failure in one Availability Zone should not affect the others.
+Each Availability Zone has its own power, cooling, and networking infrastructure.
+Relation:
+Availability Zones within a Region are connected through high-speed, low-latency networking.
+The presence of multiple Availability Zones in a Region provides redundancy and fault tolerance. If one Availability Zone experiences an issue, applications can be designed to automatically failover to another Availability Zone.
+High Availability and Fault Tolerance:
+Deploying resources across multiple Availability Zones in a Region enhances the availability and fault tolerance of applications.
+By distributing workloads across Availability Zones, you can achieve higher reliability and ensure that your applications remain available even if one Availability Zone becomes unavailable.
+When you launch resources (such as EC2 instances or databases) in AWS, you typically choose the Region where you want to deploy those resources. Within that Region, you can further specify the Availability Zone or let AWS automatically distribute resources across Availability Zones for you. In summary, Regions are the broad geographical areas in AWS, and Availability Zones are the isolated data centers within those Regions. Leveraging multiple Availability Zones within a Region is a common practice for building highly available and fault-tolerant applications in the cloud.
+Question 18: How do you monitor Amazon VPC?
+Monitoring an Amazon Virtual Private Cloud (Amazon VPC) involves using various AWS services and tools to collect and analyze data related to the performance, health, and security of your VPC. Here are some key aspects and tools for monitoring Amazon VPC:
+Amazon CloudWatch:
+VPC Flow Logs: Enable VPC Flow Logs to capture information about the IP traffic going to and from network interfaces in your VPC. These logs can be sent to Amazon
+CloudWatch Logs for analysis. Flow Logs provide insights into network traffic, including source and destination IP addresses, ports, and protocol.
+CloudWatch Metrics: CloudWatch provides VPC-specific metrics that you can monitor, such as network data in and out, packet counts, and more. These metrics help you understand the performance and behavior of your VPC.
+AWS Config:AWS Config can be used to record configurations and changes to your VPC resources. It provides a detailed view of resource changes, helping you track modifications and maintain compliance.
+Amazon VPC Dashboard:
+The AWS Management Console includes a VPC dashboard that provides an overview of your VPC configuration, including key metrics and status information.
+Amazon CloudTrail:
+CloudTrail logs API activity in your AWS account, including changes to your VPC configuration. Monitoring CloudTrail logs can help you track changes and identify any unauthorized or unintended modifications.
+VPC Endpoint Metrics:
+
+If you use VPC endpoints for services like Amazon S3 or DynamoDB, you can monitor the performance and usage of these endpoints through CloudWatch metrics.
+Third-Party Tools:
+
+Consider using third-party monitoring and management tools that integrate with AWS services. Some tools provide advanced analytics, visualization, and alerting capabilities for your VPC infrastructure.
+Security Groups and Network ACLs:
+
+Regularly review and monitor your security groups and network ACLs to ensure that the network traffic is configured according to your security policies.
+AWS Well-Architected Tool: Use the AWS Well-Architected Tool to assess your VPC architecture against best practices. It provides recommendations and insights for optimizing your VPC for performance, reliability, security, and cost efficiency.
+Automation and Infrastructure-as-Code (IaC): Implement automation and use Infrastructure-as-Code (IaC) tools like AWS CloudFormation to ensure that your VPC configurations are consistent and easily reproducible.
+Regularly reviewing logs, metrics, and configuration changes can help you proactively identify and address issues, optimize performance, and ensure the security and compliance of your Amazon VPC. The specific tools and approaches you use may depend on your monitoring
+requirements and the complexity of your VPC setup.
+Question 19: Can you change the Private IP Address of an EC2 instance while it is running or in a stopped state?
+As of my last knowledge update in January 2022, it is not possible to directly change the private IP address of an existing EC2 instance while it is running or in a stopped state. The private IP address is assigned automatically by Amazon Web Services (AWS) when you launch an instance, and it remains associated with that instance until the instance is terminated. However, there are certain scenarios and workarounds to achieve a similar outcome:
+Launching a New Instance:
+If you need a new private IP address for an EC2 instance, one approach is to launch a new instance with the desired private IP address. Once the new instance is running, you can transfer data, configurations, or roles from the old instance to the new one.
+Network Interface Replacement:
+Another method involves working with Elastic Network Interfaces (ENIs). An EC2 instance is associated with one or more network interfaces, and each interface has its own private IP address.
+You can create a new network interface with the desired private IP address and attach it to the existing instance. Then, detach the old network interface if needed.
+Note: This approach may require additional steps and considerations, and it depends on the specific use case.
+It's important to consider the implications of changing private IP addresses, especially if the instance is part of a larger system or if there are dependencies on its IP address. Keep in mind that AWS may introduce new features or updates after my last knowledge update in January 2022. Always refer to the latest AWS documentation or AWS support for the most up- to-date information on EC2 instance capabilities and features.
+Question 20: What is a Power User Access in AWS?
+In the context of AWS Identity and Access Management (IAM), a "Power User Access" refers to a predefined IAM policy that grants a user a set of permissions providing significant access to AWS services. It is a policy designed to give users elevated permissions, allowing them to
+perform a wide range of actions in AWS, but with some restrictions to prevent unintended and potentially risky operations.
+Here are key points related to Power User Access in AWS IAM:
+Policy Name:
+The policy associated with Power User Access is typically named "PowerUserAccess." This policy is one of the managed policies provided by AWS.
+Permissions:
+The PowerUserAccess policy grants a comprehensive set of permissions, allowing users to perform a broad range of actions across many AWS services. However, it does not provide full administrative access.
+Common Permissions:
+The permissions granted by Power User Access often include the ability to manage and create AWS resources such as EC2 instances, S3 buckets, RDS databases, and more. Users with this policy can also view and modify IAM roles, policies, and groups.
+Managed Policy: PowerUserAccess is a managed policy created and maintained by AWS. As a managed policy, it receives updates from AWS to reflect changes and additions to AWS services over time.
+Limitations: While Power User Access grants substantial permissions, it is not as permissive as the AWS managed policy named "AdministratorAccess," which provides full administrative access to all AWS resources and services. Power User Access is designed to strike
+balance between granting substantial capabilities and implementing some restrictions to reduce the risk of unintended actions.
+Least Privilege Principle: Following the principle of least privilege, AWS recommends granting users the minimum level of access necessary to perform their tasks. While Power User Access provides elevated permissions, it is crucial to review and customize the permissions based on the specific needs of individual users or roles.
+Custom Policies: Organizations may choose to create custom IAM policies tailored to their specific requirements rather than relying solely on managed policies like PowerUserAccess. Custom policies allow for fine-grained control over permissions.
+IAM policies, including Power User Access, play a vital role in controlling access to AWS resources, ensuring security, and adhering to the principle of least privilege. When assigning permissions, it's essential to carefully consider the specific needs of users or roles and to
+regularly review and update permissions to align with organizational requirements.
